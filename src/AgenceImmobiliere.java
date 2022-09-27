@@ -8,7 +8,6 @@ public class AgenceImmobiliere {
         TypePiece Wc = new TypePiece(TypePiece.WC, true, false);
         TypePiece Garage = new TypePiece(TypePiece.GARAGE, false, false);
         TypePiece Cave = new TypePiece(TypePiece.CAVE, false, false);
-        
         //Création d'un vendeur
         Vendeur vendeur = new Vendeur("Dupuis", "Jean-Claude", "dp.jc@gmail.com", "06.74.74.00.00");
 
@@ -20,6 +19,7 @@ public class AgenceImmobiliere {
         appartement.ajouterPiece(new PieceQuadrilatere(Wc, "0", 1.5, 2));
         appartement.ajouterPiece(new PieceQuadrilatere(salleDeBain, "0", 2, 2));
         appartement.ajouterPiece(new PieceQuadrilatere(Cave, "-1", 3, 3));
+        
         //Création de l'annonce associée au bien immobilier : Appartement
         Annonce annonceAppartement = new Annonce("AA0922001","27/09/2022", "Appartement avec vue sur le Lac d'Annecy", 6380, appartement);
 
@@ -42,5 +42,13 @@ public class AgenceImmobiliere {
         //Affichage des annonces
         System.out.println(annonceAppartement);
         System.out.println(annonceMaison);
+
+       //affichage Piece, appartement, maison
+        // PieceParallelogramme P = new PieceParallelogramme(salon,"0",3,4);
+        // System.out.println("//Test toString //");
+        // System.out.println(P);
+        // System.out.println(appartement);
+        // System.out.println(maison);
+        // System.out.println("//Fin test toString //");
     }
 }

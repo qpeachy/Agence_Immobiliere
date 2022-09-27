@@ -25,9 +25,9 @@ public class Appartement extends BienImmobilier{
         }
         if(nbrPiece>7)
         {
-            return "T7+";
+            return "T7+ ";
         }
-        return "T "+ nbrPiece;
+        return "T"+ nbrPiece;
     }
 
     @Override

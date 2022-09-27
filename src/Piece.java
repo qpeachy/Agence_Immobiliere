@@ -11,15 +11,13 @@ public abstract class Piece {
 
     public abstract double surface();
 
-
     public TypePiece get_typePiece() {
         return _typePiece;
     }
 
-
     @Override
     public String toString() {
-        return _typePiece + "surface :" + surface() + "m2 \n";
+        return _typePiece + " surface : " + surface() + "m2 \n";
     }
 
     
