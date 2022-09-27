@@ -1,20 +1,21 @@
 public class PieceTriangulaire extends Piece{
     
-    private int _base;
-    private int _hauteur;
+    private double _base;
+    private double _hauteur;
     
 
-    public PieceTriangulaire(TypePiece _typePiece, String _niveau, int base, int hauteur) {
+    public PieceTriangulaire(TypePiece _typePiece, String _niveau, double base, double hauteur) {
         super(_typePiece, _niveau);
         this._base = base;
         this._hauteur = hauteur;
     }
 
 
-
     @Override
     public double surface() {
-        return 1/2 * _base * _hauteur;
+        double result; 
+        result= (_base * _hauteur)/2;
+        return result;
     }
 
     

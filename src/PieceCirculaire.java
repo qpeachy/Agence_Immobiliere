@@ -1,9 +1,9 @@
 public class PieceCirculaire extends Piece {
 
-    private int _rayon;
+    private double _rayon;
 
 
-    public PieceCirculaire(TypePiece _typePiece, String _niveau, int rayon) {
+    public PieceCirculaire(TypePiece _typePiece, String _niveau,double rayon) {
         super(_typePiece, _niveau);
         this._rayon=rayon;
     }

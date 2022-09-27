@@ -1,11 +1,11 @@
 public class PieceTrapezoidale extends Piece{
 
-    private int _petiteBase;
-    private int _grandeBase;
-    private int _hauteur;
+    private double _petiteBase;
+    private double _grandeBase;
+    private double _hauteur;
     
 
-    public PieceTrapezoidale(TypePiece _typePiece, String _niveau, int _petiteBase, int _grandeBase, int _hauteur) {
+    public PieceTrapezoidale(TypePiece _typePiece, String _niveau, double _petiteBase, double _grandeBase, double _hauteur) {
         super(_typePiece, _niveau);
         this._petiteBase = _petiteBase;
         this._grandeBase = _grandeBase;
@@ -16,7 +16,7 @@ public class PieceTrapezoidale extends Piece{
 
     @Override
     public double surface() {
-        return 1.2*_hauteur*(_grandeBase) + _petiteBase);
+        return 1.2*_hauteur*(_grandeBase + _petiteBase);
     }
     
 }

@@ -9,16 +9,12 @@ public abstract class Piece {
     }
 
 
+    public abstract double surface();
+
+
     public TypePiece get_typePiece() {
         return _typePiece;
     }
-
-
-    public String get_niveau() {
-        return _niveau;
-    }
-
-    public abstract double surface();
 
 
     @Override

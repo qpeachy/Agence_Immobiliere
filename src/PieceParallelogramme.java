@@ -1,10 +1,10 @@
 public class PieceParallelogramme extends Piece{
 
-    private int _base;
-    private int _hauteur;
+    private double _base;
+    private double _hauteur;
     
 
-    public PieceParallelogramme(TypePiece _typePiece, String _niveau, int base, int hauteur) {
+    public PieceParallelogramme(TypePiece _typePiece, String _niveau, double base, double hauteur) {
         super(_typePiece, _niveau);
         this._base = base;
         this._hauteur = hauteur;
