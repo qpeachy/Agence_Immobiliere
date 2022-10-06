@@ -26,8 +26,5 @@ public class Maison extends BienImmobilier{
         resultat += ". " + super.toString();
         return resultat;
 
-    }
-
-    
-    
+    }    
 }

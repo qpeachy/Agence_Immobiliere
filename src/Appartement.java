@@ -1,19 +1,32 @@
+import java.util.HashMap;
+
 public class Appartement extends BienImmobilier{
     
     private String _etage;
     private boolean _ascenseur;
+    private boolean _dernierEtage;
+    private String _facesExterieur;
+    protected HashMap<String, Double> _faces = new HashMap<String, Double>();
 
-    public Appartement(String _rue, String _ville, String _codePostal, Vendeur _vendeur, String _etage,
-            boolean _ascenseur) {
-        super(_rue, _ville, _codePostal, _vendeur);
-        this._etage = _etage;
-        this._ascenseur = _ascenseur;
+    public Appartement(String rue, String ville, String codePostal, Vendeur vendeur, String etage,
+            boolean ascenseur, boolean dernierEtage, String facesExterieur) {
+        super(rue, ville, codePostal, vendeur);
+        this._etage = etage;
+        this._ascenseur = ascenseur;
+        this._dernierEtage = dernierEtage;
+        this._facesExterieur=facesExterieur;
+        _faces = new HashMap<String, Double>();
+        cas();
     }
 
-    public Appartement(String _rue, String _ville, String _codePostal, Vendeur _vendeur, String _etage) {
-        super(_rue, _ville, _codePostal, _vendeur);
-        this._etage = _etage;
+    public Appartement(String rue, String ville, String codePostal, Vendeur vendeur, String etage, boolean dernierEtage, String facesExterieur) {
+        super(rue, ville, codePostal, vendeur);
+        this._etage = etage;
         this._ascenseur =false;
+        this._dernierEtage = dernierEtage;
+        this._facesExterieur=facesExterieur;
+        _faces = new HashMap<String, Double>();
+        cas();
     }
     
     public String typeBien(){
@@ -43,5 +56,24 @@ public class Appartement extends BienImmobilier{
 
     }
 
-    
+    public void cas(){
+        _faces.put("0", null);
+        _faces.put("1", null);
+        _faces.put("2", 1.1);
+        _faces.put("3", 1.15);
+        _faces.put("4", 1.25);
+
+    }
+
+    @Override
+    public double dpe(){
+        double result = super.dpe();
+        if(_etage=="0" || _dernierEtage){
+            result*=1.2;
+        }else  {
+            result*=0.9;
+        } 
+        result*=_faces.get(_facesExterieur);
+        return result;
+    }
 }

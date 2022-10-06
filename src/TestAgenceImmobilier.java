@@ -76,4 +76,14 @@ public class TestAgenceImmobilier {
 
     }
 
+    @Test
+    public void dpeTest(){
+        Vendeur vendeur = new Vendeur("Dupuis", "Jean-Claude", "dp.jc@gmail.com", "06.74.74.00.00");
+        Appartement appartement = new Appartement("16 rue du lac", "ANNECY", "74000", vendeur, "1er étage");
+        TypePiece chambre = new TypePiece(TypePiece.CHAMBRE, true, true);
+        appartement.ajouterPiece(new PieceQuadrilatere(chambre, "0", 5, 6));
+        appartement.diagnosticDPE("Sud", "Bonne", "Electrique", "Excellente");
+        assertEquals(29.04, appartement.dpe(), 1e-2);
+    }
+
 }
